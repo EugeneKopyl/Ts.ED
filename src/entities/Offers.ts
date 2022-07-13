@@ -18,9 +18,4 @@ export class Offers {
 
   @CreateDateColumn()
   createdDate: Date
-
-  @BeforeInsert()
-  private beforeInsert(): void {
-    this.createdDate = new Date();
-  }
 }
