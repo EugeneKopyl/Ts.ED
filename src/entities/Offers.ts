@@ -1,21 +1,27 @@
-import {BeforeInsert, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn} from "typeorm";
+import {
+  BeforeInsert,
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+} from "typeorm";
 
 @Entity({
-  name: "Offers"
+  name: "Offers",
 })
 export class Offers {
   @PrimaryGeneratedColumn()
-  id: number
+  id: number;
 
   @Column()
-  title: string
+  title: string;
 
   @Column()
-  subTitle: string
+  subTitle: string;
 
   @Column()
-  description: string
+  description: string;
 
   @CreateDateColumn()
-  createdDate: Date
+  createdDate: Date;
 }

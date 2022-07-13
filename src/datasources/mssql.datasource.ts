@@ -1,7 +1,7 @@
-import {Inject, Injectable, registerProvider} from "@tsed/di";
-import {DataSource} from "typeorm";
-import {Logger} from "@tsed/logger";
-import {Offers} from "../entities/Offers";
+import { Inject, Injectable, registerProvider } from "@tsed/di";
+import { DataSource } from "typeorm";
+import { Logger } from "@tsed/logger";
+import { Offers } from "../entities/Offers";
 
 export const MSSQL_DATA_SOURCE = Symbol.for("MssqlDataSource");
 
@@ -13,7 +13,7 @@ export const MssqlDataSource = new DataSource({
   host: process.env.MSSQL_HOST,
   password: process.env.MSSQL_PASSWORD,
   port: Number(process.env.MSSQL_PORT),
-  type: 'mssql',
+  type: "mssql",
   username: process.env.MSSQL_USER,
   requestTimeout: 50000,
   options: {
@@ -22,7 +22,7 @@ export const MssqlDataSource = new DataSource({
     trustServerCertificate: true,
   },
   logging: true,
-  logger: 'advanced-console',
+  logger: "advanced-console",
 });
 
 registerProvider<DataSource>({
@@ -39,8 +39,8 @@ registerProvider<DataSource>({
   hooks: {
     $onDestroy(dataSource) {
       return dataSource.isInitialized && dataSource.close();
-    }
-  }
+    },
+  },
 });
 
 @Injectable()
