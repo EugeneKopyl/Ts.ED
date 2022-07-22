@@ -1,11 +1,11 @@
-<p style="text-align: center" align="center">
+<p style="text-align: center">
   <a href="https://tsed.io" target="_blank"><img src="https://tsed.io/tsed-og.png" width="200" alt="Ts.ED logo"/></a>
 </p>
 
-<div align="center">
+<div>
   <h1>Ts.ED - tsed</h1>
   <br />
-  <div align="center">
+  <div>
     <a href="https://cli.tsed.io/">Website</a>
     <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
     <a href="https://cli.tsed.io/getting-started.html">Getting started</a>

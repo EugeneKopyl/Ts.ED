@@ -5,7 +5,6 @@ import { Offers } from "../entities/Offers";
 
 export const MSSQL_DATA_SOURCE = Symbol.for("MssqlDataSource");
 
-// @ts-ignore
 export const MssqlDataSource = new DataSource({
   database: process.env.MSSQL_DB_NAME,
   entities: [Offers],

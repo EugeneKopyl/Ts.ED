@@ -1,4 +1,4 @@
-import path, { join } from "path";
+import { join } from "path";
 import { Configuration, Inject } from "@tsed/di";
 import { PlatformApplication } from "@tsed/common";
 import "@tsed/platform-express";
