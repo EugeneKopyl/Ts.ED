@@ -1,6 +1,6 @@
 {
   "directory": [
-    "./src/controllers/test"
+    "./src/controllers/offers"
   ],
   "exclude": [
     "__mock__",

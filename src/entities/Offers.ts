@@ -1,6 +1,5 @@
 import {
   Column,
-  CreateDateColumn,
   Entity,
   PrimaryGeneratedColumn,
 } from "typeorm";
@@ -20,7 +19,4 @@ export class Offers {
 
   @Column()
   description: string;
-
-  @CreateDateColumn()
-  createdDate: Date;
 }

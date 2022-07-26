@@ -9,7 +9,7 @@ import methodOverride from "method-override";
 import cors from "cors";
 import "@tsed/ajv";
 import { config } from "./config";
-import * as test from "./controllers/test";
+import * as offers from "./controllers/offers";
 
 @Configuration({
   ...config,
@@ -17,7 +17,7 @@ import * as test from "./controllers/test";
   httpPort: process.env.PORT || 8083,
   componentsScan: false,
   mount: {
-    "/test": [...Object.values(test)],
+    "/": [...Object.values(offers)],
   },
   middlewares: [
     cors(),
