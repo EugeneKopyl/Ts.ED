@@ -1,22 +1,20 @@
 import { Controller } from "@tsed/di";
 import { PathParams } from "@tsed/platform-params";
 import { Get } from "@tsed/schema";
-
-import { OfferRepository } from "../../repositories/OfferRepository";
+import { Offers } from "../../entities/Offers";
+import { OffersService } from "../../services/offers.service";
 
 @Controller("/offers")
 export class OffersCtrl {
+  constructor(private offersService: OffersService) {}
+
   @Get("/")
-  async getAll() {
-    const offers = OfferRepository.createQueryBuilder("offers").getMany();
-    return offers;
+  getList(): Promise<Offers[]> {
+    return this.offersService.getAll();
   }
 
   @Get("/:id")
-  async findOne(@PathParams("id") id: string) {
-    const offer = OfferRepository.createQueryBuilder("offer")
-      .where("offer.id = :id", { id: id })
-      .getOne();
-    return offer;
+  getById(@PathParams("id") id: string): Promise<Offers | null> {
+    return this.offersService.findById(id);
   }
 }
