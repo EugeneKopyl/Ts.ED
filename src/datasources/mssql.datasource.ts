@@ -2,12 +2,13 @@ import { Inject, Injectable, registerProvider } from "@tsed/di";
 import { DataSource } from "typeorm";
 import { Logger } from "@tsed/logger";
 import { Offers } from "../entities/Offers";
+import { OffersCategory } from "../entities/OffersCategory";
 
 export const MSSQL_DATA_SOURCE = Symbol.for("MssqlDataSource");
 
 export const MssqlDataSource = new DataSource({
   database: process.env.MSSQL_DB_NAME,
-  entities: [Offers],
+  entities: [Offers, OffersCategory],
   subscribers: [`${__dirname}/model-subscribers/*{.ts,.js}`],
   host: process.env.MSSQL_HOST,
   password: process.env.MSSQL_PASSWORD,
